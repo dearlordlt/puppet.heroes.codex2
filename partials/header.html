@@ -2,32 +2,24 @@
     <div class="card">
         <div class="toolbar">
             <div class="toolbar__left mr++">
-                <button class="btn btn--l btn--black btn--icon" lx-ripple>
-                    <i class="mdi mdi--menu"></i>
-                </button>
-            </div>
-
-            <span class="toolbar__label fs-title ml">Puppet Hero</span>
-
-            <div class="toolbar__right">
-                <lx-dropdown position="right" from-top>
-                    <button class="btn btn--l btn--black btn--icon" lx-ripple lx-dropdown-toggle>
-                        <i class="mdi mdi--more-vert"></i>
+                <lx-dropdown>
+                    <button class="btn btn--s btn--blue btn--fab" lx-ripple lx-dropdown-toggle>
+                        <i class="mdi mdi--home"></i>
                     </button>
 
                     <lx-dropdown-menu>
                         <ul>
-                            <li><a class="dropdown-link">Combat Skills</a></li>
-                            <li><a class="dropdown-link">Non Combat Skills</a></li>
-                            <li><a class="dropdown-link">Attributes</a></li>
-                            <li><a class="dropdown-link">Talents</a></li>
-                            <li><a class="dropdown-link">Weapons</a></li>
+                            <li><a class="dropdown-link" href="#/home">Home</a></li>
                             <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-link">About Us</a></li>
+                            <li><a class="dropdown-link" href="#/about">About us</a></li>
                         </ul>
                     </lx-dropdown-menu>
                 </lx-dropdown>
+            </div>
 
+            <span class="toolbar__label fs-title ml">{{head}}</span>
+
+            <div class="toolbar__right">
                 <lx-search-filter closed theme="dark"></lx-search-filter>
             </div>
         </div>
