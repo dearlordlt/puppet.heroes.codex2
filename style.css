@@ -11,3 +11,11 @@ html, body {
     margin-top: 10px;
     max-width: 1000px;
 }
+
+.skillTable {
+    margin : 5px;
+}
+
+.highlighted {
+    background: yellow;
+}

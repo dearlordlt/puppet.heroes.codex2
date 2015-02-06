@@ -2,13 +2,14 @@
  * Created by Sarunas on 2015.02.04.
  */
 
-angular.module('app', [
+var app = angular.module('app', [
     'lumx',
     'ngRoute',
-    'codexControllers'])
+    'codexControllers',
+    'btford.markdown'])
 
-.config(['$routeProvider',
-    function($routeProvider) {
+.config(['$routeProvider', 'markdownConverterProvider',
+    function($routeProvider, markdownConverterProvider) {
         $routeProvider.
             when('/about', {
                 templateUrl: 'partials/about.html',
@@ -18,7 +19,14 @@ angular.module('app', [
                 templateUrl: 'partials/home.html',
                 controller: 'homeCtrl'
             }).
+            when('/ncgskills', {
+                templateUrl: 'partials/ncgskills.html',
+                controller: 'ncgSkillsCtrl'
+            }).
             otherwise({
                 redirectTo: '/home'
             });
+        markdownConverterProvider.config({
+            extensions: ['twitter']
+        });
     }]);

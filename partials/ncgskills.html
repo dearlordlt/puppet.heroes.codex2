@@ -1,0 +1,21 @@
+<span class="fs-display-1 display-block">{{title}}</span><br>
+<div flex-item>
+    <lx-text-field label="Filter NCG skills">
+        </i><input type="text" ng-model="skillFilter">
+    </lx-text-field>
+</div>
+
+<div flex-container="row" flex-gutter="24" class="skillTable"
+     ng-repeat="skill in skills.data | filter:skillFilter as results">
+    <div flex-item>
+        <div class="card">
+            <div class="p+">
+                <strong class="fs-headline display-block" ng-bind-html="skill.Name | highlight:skillFilter">{{skill.Name}}</strong>
+                <span class="fs-subhead tc-black-2 display-block" ng-bind-html="skill.SkillType | highlight:skillFilter">{{skill.SkillType}}</span>
+                <div class="paragraph fs-body-1 mt+">
+                    <div btf-markdown="skill.Description" ng-bind-html="skill.Description | highlight:skillFilter"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
